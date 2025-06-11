@@ -5,7 +5,7 @@ class LibroDiario:
         ''' Construcctor de la clase '''
         self.transacciones = []
 
-    def agregar(self,fecha, descripcion,monto,tipo):
+    def agregar(self, fecha, descripcion, monto, tipo):
         ''' Agregar una transaccion '''
         self.transacciones.append({
             "fecha": fecha,
@@ -15,13 +15,13 @@ class LibroDiario:
         })
 
     def resumen(self):
-        ''' calcula el total de ingresos y egresos '''
+        ''' Calcula el total de ingresos y egresos '''
         ingresos = 0
         egresos = 0
         for t in self.transacciones:
-            if t["tipo"]=="ingreso":
-                ingresos+=t["monto"]
+            if t["tipo"] == "ingreso":
+                ingresos += t["monto"]
             else:
-                egresos+=t["monto"]
-        return "Total ingresos: " + str(ingresos) + " Total egresos: " + str(egresos)
-
+                egresos += t["monto"]
+        return f"Total ingresos: {ingresos} Total egresos: {egresos}"
+    
